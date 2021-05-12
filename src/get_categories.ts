@@ -8,13 +8,9 @@ export default async function getCategories (page: Page): Promise<Choice[]> {
     const categoryNodes = document.querySelectorAll('div.category');
 
     categoryNodes.forEach(category => {
-      let categoryName = category.children[0].children[0].textContent;
-      if (/^\n.*\n$/.test(categoryName)) {
-        categoryName = categoryName.slice(1, categoryName.length - 1);
-      }
-
+      const categoryName = category.children[0].children[0].textContent;
       const categoryLink = category.children[0].getAttribute('href');
-      categoryChoices.push({title: categoryName, value: categoryLink});
+      categoryChoices.push({title: categoryName.trim(), value: categoryLink});
     });
 
     return categoryChoices;
