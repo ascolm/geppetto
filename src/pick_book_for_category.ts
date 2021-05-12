@@ -1,7 +1,6 @@
 import { Page} from 'puppeteer';
 import config from './config';
-
-type BookRecommendation = {bookTitle: string, ISBN?: string}
+import { BookRecommendation } from './types';
 
 export default async function pickBookForCategory (page: Page, categoryLink: string): Promise<BookRecommendation> {
   await page.goto(config.goodreadsBaseUrl + categoryLink);

@@ -1,6 +1,5 @@
 import { Page} from 'puppeteer';
-
-type Choice = {title: string, value: string};
+import { Choice } from './types';
 
 export default async function getCategories (page: Page): Promise<Choice[]> {
   return page.evaluate(() => {
