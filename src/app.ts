@@ -1,9 +1,9 @@
 import * as puppeteer from 'puppeteer';
 import  * as prompts from 'prompts';
 import config from './config';
-import getCategories from './get_categories';
-import pickBookForCategory from './pick_book/pick_book';
-import amazonAutomation from './amazon_automation/amazon_automation';
+import getCategories from './modules/get_categories/get_categories';
+import pickBookForCategory from './modules/pick_book/pick_book';
+import amazonAutomation from './modules/amazon_automation/amazon_automation';
 
 (async () => {
   const browser = await puppeteer.launch({

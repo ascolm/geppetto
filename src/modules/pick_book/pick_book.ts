@@ -1,6 +1,6 @@
 import { Page} from 'puppeteer';
-import config from '../config';
-import { BookRecommendation } from '../types';
+import config from '../../config';
+import { BookRecommendation } from '../../types';
 import { getISBN, getLinkToRandomBook } from './pick_book_helpers';
 
 export default async function pickBookForCategory (page: Page, categoryLink: string): Promise<BookRecommendation> {

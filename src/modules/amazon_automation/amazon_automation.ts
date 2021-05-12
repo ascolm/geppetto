@@ -1,5 +1,5 @@
-import { BookRecommendation } from '../types';
-import config from '../config';
+import { BookRecommendation } from '../../types';
+import config from '../../config';
 import chromeLauncher from './chrome_launcher';
 import { buildSearchUrlFrom, launchLocalChrome, launchHeadless, findLinkToPreferredFormat, parameterizeTitle, getBookLinkByFormatPreference } from './amazon_automation_helpers';
 

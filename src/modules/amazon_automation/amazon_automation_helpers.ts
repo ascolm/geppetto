@@ -1,5 +1,5 @@
 import * as puppeteer from 'puppeteer';
-import config from '../config';
+import config from '../../config';
 
 export function launchLocalChrome () {
   return puppeteer.launch({
