@@ -10,7 +10,9 @@ export default async function pickBookForCategory (page: Page, categoryLink: str
   const goodreadsLink = await getLinkToRandomBook(page);
   await page.goto(config.goodreadsBaseUrl + goodreadsLink);
 
-  const bookTitle = await page.evaluate(() => document.querySelector('#bookTitle').textContent.trim());
+  const bookTitle = await page.evaluate(() => document.querySelector('#bookTitle')?.textContent?.trim());
+  if (!bookTitle) throw new Error('Book title could not be fetched from Goodreads\' book page');
+
   const ISBN = await getISBN(page);
 
   return {bookTitle, ISBN};

@@ -1,9 +1,9 @@
 import { BookRecommendation } from '../../types';
 import config from '../../config';
 import chromeLauncher from './chrome_launcher';
-import { buildSearchUrlFrom, launchLocalChrome, launchHeadless, findLinkToPreferredFormat, parameterizeTitle, getBookLinkByFormatPreference } from './amazon_automation_helpers';
+import { buildSearchUrlFrom, launchLocalChrome, launchHeadless, parameterizeTitle, getBookLinkByFormatPreference } from './amazon_automation_helpers';
 
-export default async function amazonAutomation (book: BookRecommendation) {
+export default async function amazonAutomation (book: BookRecommendation): Promise<void> {
   let chromeBrowser;
   let fallbackToHeadless = false;
 
@@ -51,6 +51,8 @@ export default async function amazonAutomation (book: BookRecommendation) {
     await chromePage.waitForSelector('input[name="submit.addToCart"]', {visible: true});
     await chromePage.click('input[name="submit.addToCart"]');
   }
+
+
 
   // Navigate to checkout
   await chromePage.waitForSelector('#hlb-ptc-btn-native', {visible: true});
