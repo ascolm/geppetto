@@ -5,7 +5,6 @@ const config = {
   amazonQueryFormat: 'https://www.amazon.com/s?k={{SEARCHPLACEHOLDER}}&i=stripbooks-intl-ship',  // {{SEARCHPLACEHOLDER}} gets replaced with search term in the associated helper function
   amazonBaseUrl: 'https://www.amazon.com',
   amazonPrintSubDir: '/dp/'
-
 };
 
 export default config;

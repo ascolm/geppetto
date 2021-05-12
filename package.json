@@ -28,6 +28,7 @@
     }
   },
   "dependencies": {
+    "chrome-launcher": "^0.13.4",
     "prompts": "^2.4.1",
     "puppeteer": "^9.1.1"
   },

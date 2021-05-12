@@ -3,7 +3,7 @@ import  * as prompts from 'prompts';
 import config from './config';
 import getCategories from './get_categories';
 import pickBookForCategory from './pick_book/pick_book';
-import amazonAutomation from './amazon_automation';
+import amazonAutomation from './amazon_automation/amazon_automation';
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -36,5 +36,4 @@ import amazonAutomation from './amazon_automation';
   await browser.close();
 
   await amazonAutomation(bookToRecommend);
-
 })();
