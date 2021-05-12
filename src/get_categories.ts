@@ -1,8 +1,9 @@
 import { Page} from 'puppeteer';
 
-export default async function getCategories (page: Page) {
+type Choice = {title: string, value: string};
+
+export default async function getCategories (page: Page): Promise<Choice[]> {
   return page.evaluate(() => {
-    type Choice = {title: string, value: string};
     const categoryChoices: Choice[] = [];
 
     const categoryNodes = document.querySelectorAll('div.category');
